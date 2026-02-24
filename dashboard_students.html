@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HMS - Students</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+<body class="bg-[#0f0f0f] text-white flex flex-col">
+
+<!-- TOP NAV -->
+<div class="bg-[#111] border-b border-[#222] flex items-center justify-between px-6 h-16 shrink-0">
+  <div class="flex items-center gap-2.5 min-w-[180px]">
+    <div class="w-3.5 h-3.5 bg-cyan-400 rounded-full"></div>
+    <span class="text-lg font-bold">HMS</span>
+  </div>
+  <div class="flex items-center gap-1">
+    <div class="flex items-center gap-2 px-5 py-2 text-sm text-white bg-[#1c1c1c] border border-[#333] rounded-lg cursor-pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </div>
+    <a href="/rooms.html">
+      <div class="flex items-center gap-2 px-5 py-2 text-sm text-[#aaa] rounded-lg cursor-pointer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M16 3v18"/></svg>
+        Rooms
+      </div>
+    </a>
+    <div class="flex items-center gap-2 px-5 py-2 text-sm text-[#aaa] rounded-lg cursor-pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      Attendance
+    </div>
+    <div class="flex items-center gap-2 px-5 py-2 text-sm text-[#aaa] rounded-lg cursor-pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      Accounts
+    </div>
+    <div class="flex items-center gap-2 px-5 py-2 text-sm text-[#aaa] rounded-lg cursor-pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2"/></svg>
+      Maintenance
+    </div>
+  </div>
+  <div class="flex items-center gap-3 min-w-[180px] justify-end">
+    <button class="w-10 h-10 rounded-full bg-[#1c1c1c] flex items-center justify-center">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    </button>
+    <button class="w-10 h-10 rounded-full bg-[#1c1c1c] flex items-center justify-center">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    </button>
+    <button class="w-10 h-10 rounded-full bg-[#1c1c1c] flex items-center justify-center">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="flex flex-1 overflow-hidden">
+
+  <!-- SIDEBAR -->
+  <div class="w-[220px] bg-[#111] border-r border-[#1e1e1e] px-3 py-4 flex flex-col gap-1 shrink-0">
+    <a href="/index.html">
+      <div class="flex items-center gap-3 px-4 py-2.5 rounded-lg cursor-pointer text-sm text-[#aaa]">
+        <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Analytics
+      </div>
+    </a>
+    <div class="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-[#2a2a2a] cursor-pointer text-sm text-white">
+      <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Students
+    </div>
+    <div class="flex items-center gap-3 px-4 py-2.5 rounded-lg cursor-pointer text-sm text-[#aaa]">
+      <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Complaints
+    </div>
+    <div class="flex items-center gap-3 px-4 py-2.5 rounded-lg cursor-pointer text-sm text-[#aaa]">
+      <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      Stock
+    </div>
+    <div class="flex items-center gap-3 px-4 py-2.5 rounded-lg cursor-pointer text-sm text-[#aaa]">
+      <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Users
+    </div>
+    <div class="flex items-center gap-3 px-4 py-2.5 rounded-lg cursor-pointer text-sm text-[#aaa]">
+      <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+      Meals
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="flex-1 overflow-hidden flex flex-col gap-4 p-5">
+
+    <!-- TOP SECTION: stats + buttons -->
+    <div class="flex gap-4 shrink-0">
+
+      <!-- Stats Card -->
+      <div class="flex-1 bg-[#1c1c1c] rounded-2xl p-5 grid grid-cols-[1fr_1fr_1fr_180px] gap-3">
+
+        <!-- Row 1 col 1: Total Students -->
+        <div class="bg-[#111] rounded-xl p-4">
+          <div class="flex items-center gap-1.5 text-xs text-[#aaa] mb-2">
+            Total Students
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <div class="text-2xl font-bold">3569</div>
+        </div>
+
+        <!-- Row 1 col 2: In Hostel -->
+        <div class="bg-[#111] rounded-xl p-4">
+          <div class="flex items-center gap-1.5 text-xs text-[#aaa] mb-2">
+            In Hostel
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <div class="text-2xl font-bold text-cyan-400">1569</div>
+        </div>
+
+        <!-- Row 1 col 3: Outside Hostel -->
+        <div class="bg-[#111] rounded-xl p-4">
+          <div class="flex items-center gap-1.5 text-xs text-[#aaa] mb-2">
+            Outside Hostel
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <div class="text-2xl font-bold">2500</div>
+        </div>
+
+        <!-- Fees Defaulters spans 2 rows -->
+        <div class="bg-[#111] rounded-xl p-4 row-span-2 flex flex-col justify-between">
+          <div class="text-xs text-[#aaa]">Fees Defaulters</div>
+          <div class="text-4xl font-bold text-yellow-400">150</div>
+          <button class="bg-[#2a2a2a] text-white text-sm font-medium py-2.5 rounded-xl w-full">View List</button>
+        </div>
+
+        <!-- Row 2 col 1: Students Assigned -->
+        <div class="bg-[#111] rounded-xl p-4">
+          <div class="flex items-center gap-1.5 text-xs text-[#aaa] mb-2">
+            Students Assigned
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <div class="text-2xl font-bold text-[#e91e8c]">2569</div>
+        </div>
+
+        <!-- Row 2 col 2: Students Removed -->
+        <div class="bg-[#111] rounded-xl p-4">
+          <div class="flex items-center gap-1.5 text-xs text-[#aaa] mb-2">
+            Students Removed
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <div class="text-2xl font-bold text-red-500">1000</div>
+        </div>
+
+        <!-- Row 2 col 3: empty spacer -->
+        <div class="bg-[#111] rounded-xl p-4 opacity-0"></div>
+
+      </div>
+
+      <!-- Right Buttons -->
+      <div class="flex flex-col gap-3 w-48 shrink-0">
+        <button class="border border-cyan-400 text-white font-semibold text-sm py-4 rounded-xl w-full">+Add Student</button>
+        <button class="border border-red-500 text-red-500 font-semibold text-sm py-4 rounded-xl w-full">Remove Student</button>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM SECTION: 3 columns -->
+    <div class="flex gap-4 flex-1 overflow-hidden">
+
+      <!-- Students List -->
+      <div class="flex-1 bg-[#1c1c1c] rounded-2xl p-4 flex flex-col gap-3 overflow-hidden">
+        <div class="flex items-center gap-2 text-sm font-semibold shrink-0">
+          Students
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </div>
+        <!-- Search + Filter -->
+        <div class="flex gap-2 shrink-0">
+          <div class="relative flex-1">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Search ..." class="bg-[#111] border-none rounded-xl pl-9 pr-4 py-2.5 text-sm text-white w-full outline-none placeholder-[#555]" />
+          </div>
+          <button class="flex items-center gap-2 bg-[#111] px-4 py-2.5 rounded-xl text-sm text-[#aaa]">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            Filter
+          </button>
+        </div>
+        <!-- List -->
+        <div class="flex flex-col gap-2 overflow-y-auto scrollbar-hide">
+          <!-- Student Row repeated -->
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0">
+                <svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg>
+              </div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="flex items-center justify-between bg-[#111] rounded-xl px-3 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+              <span class="text-sm font-medium">Abhinav Srivastva</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Defaulters Students -->
+      <div class="flex-1 bg-[#1c1c1c] rounded-2xl p-4 flex flex-col gap-3 overflow-hidden">
+        <div class="flex items-center gap-2 text-sm font-semibold shrink-0">
+          Defaulters Students
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </div>
+        <!-- Search + Add -->
+        <div class="flex gap-2 shrink-0">
+          <div class="relative flex-1">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Search ..." class="bg-[#111] border-none rounded-xl pl-9 pr-4 py-2.5 text-sm text-white w-full outline-none placeholder-[#555]" />
+          </div>
+          <button class="bg-cyan-400 text-black font-semibold px-4 py-2.5 rounded-xl text-sm">+Add</button>
+        </div>
+        <!-- Defaulter Cards -->
+        <div class="flex flex-col gap-3 overflow-y-auto scrollbar-hide">
+
+          <!-- Defaulter Card 1 -->
+          <div class="bg-[#111] rounded-xl p-3 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+                <span class="text-sm font-medium">Abhinav Srivastva</span>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <p class="text-xs text-[#aaa]">Broke 4 Test Tubes in Hostel Mess</p>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#1c1c1c] text-xs px-3 py-1.5 rounded-lg">Fine : ₹ 1,500</span>
+              <span class="bg-[#1c1c1c] text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                12 Nov 2022
+              </span>
+            </div>
+            <div class="flex gap-2">
+              <button class="flex-1 border border-red-500 text-red-500 text-xs font-semibold py-2 rounded-lg">Remove Defaulter</button>
+              <button class="flex-1 border border-cyan-400 text-cyan-400 text-xs font-semibold py-2 rounded-lg">Send Payment Link</button>
+            </div>
+          </div>
+
+          <!-- Defaulter Card 2 -->
+          <div class="bg-[#111] rounded-xl p-3 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+                <span class="text-sm font-medium">Abhinav Srivastva</span>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <p class="text-xs text-[#aaa]">Broke 4 Test Tubes in Hostel Mess</p>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#1c1c1c] text-xs px-3 py-1.5 rounded-lg">Fine : ₹ 1,500</span>
+              <span class="bg-[#1c1c1c] text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                12 Nov 2022
+              </span>
+            </div>
+            <div class="flex gap-2">
+              <button class="flex-1 border border-red-500 text-red-500 text-xs font-semibold py-2 rounded-lg">Remove Defaulter</button>
+              <button class="flex-1 border border-cyan-400 text-cyan-400 text-xs font-semibold py-2 rounded-lg">Send Payment Link</button>
+            </div>
+          </div>
+
+          <!-- Defaulter Card 3 (partial visible) -->
+          <div class="bg-[#111] rounded-xl p-3 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+                <span class="text-sm font-medium">Abhinav Srivastva</span>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <p class="text-xs text-[#aaa]">Broke 4 Test Tubes in Hostel Mess</p>
+            <div class="flex items-center gap-2">
+              <span class="bg-[#1c1c1c] text-xs px-3 py-1.5 rounded-lg">Fine : ₹ 1,500</span>
+              <span class="bg-[#1c1c1c] text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                12 Nov 2022
+              </span>
+            </div>
+            <div class="flex gap-2">
+              <button class="flex-1 border border-red-500 text-red-500 text-xs font-semibold py-2 rounded-lg">Remove Defaulter</button>
+              <button class="flex-1 border border-cyan-400 text-cyan-400 text-xs font-semibold py-2 rounded-lg">Send Payment Link</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Student Update Panel -->
+      <div class="w-[230px] bg-[#1c1c1c] rounded-2xl p-4 flex flex-col gap-3 shrink-0 overflow-hidden">
+        <div class="flex items-center gap-2 text-sm font-semibold shrink-0">
+          Student Update
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </div>
+        <div class="flex flex-col gap-2 overflow-y-auto scrollbar-hide">
+          <!-- Update rows x7 -->
+          <div class="flex items-center gap-2.5 bg-[#111] rounded-xl px-3 py-2.5">
+            <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+            <div>
+              <div class="text-xs font-semibold">Ramakant Sharma</div>
+              <div class="text-[10px] text-[#aaa] flex items-center gap-1 mt-0.5">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                12:30
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5 bg-[#111] rounded-xl px-3 py-2.5">
+            <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+            <div><div class="text-xs font-semibold">Ramakant Sharma</div><div class="text-[10px] text-[#aaa] flex items-center gap-1 mt-0.5"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12:30</div></div>
+          </div>
+          <div class="flex items-center gap-2.5 bg-[#111] rounded-xl px-3 py-2.5">
+            <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+            <div><div class="text-xs font-semibold">Ramakant Sharma</div><div class="text-[10px] text-[#aaa] flex items-center gap-1 mt-0.5"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12:30</div></div>
+          </div>
+          <div class="flex items-center gap-2.5 bg-[#111] rounded-xl px-3 py-2.5">
+            <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+            <div><div class="text-xs font-semibold">Ramakant Sharma</div><div class="text-[10px] text-[#aaa] flex items-center gap-1 mt-0.5"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12:30</div></div>
+          </div>
+          <div class="flex items-center gap-2.5 bg-[#111] rounded-xl px-3 py-2.5">
+            <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+            <div><div class="text-xs font-semibold">Ramakant Sharma</div><div class="text-[10px] text-[#aaa] flex items-center gap-1 mt-0.5"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12:30</div></div>
+          </div>
+          <div class="flex items-center gap-2.5 bg-[#111] rounded-xl px-3 py-2.5">
+            <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+            <div><div class="text-xs font-semibold">Ramakant Sharma</div><div class="text-[10px] text-[#aaa] flex items-center gap-1 mt-0.5"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12:30</div></div>
+          </div>
+          <div class="flex items-center gap-2.5 bg-[#111] rounded-xl px-3 py-2.5">
+            <div class="w-8 h-8 rounded-full bg-[#333] overflow-hidden shrink-0"><svg viewBox="0 0 32 32" fill="#555"><circle cx="16" cy="12" r="7"/><path d="M2 30c0-8 5.5-13 14-13s14 5 14 13"/></svg></div>
+            <div><div class="text-xs font-semibold">Ramakant Sharma</div><div class="text-[10px] text-[#aaa] flex items-center gap-1 mt-0.5"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12:30</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
